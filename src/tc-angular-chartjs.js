@@ -118,7 +118,11 @@
               if ( exposeChart ) {
                 $scope.chart = chartObj;
               }
-              chartObj.resize();
+
+              if (chartObj.chart.canvas.parentNode.clientHeight != 0 && chartObj.chart.canvas.parentNode.clientWidth != 0)
+              {
+                  chartObj.resize();
+              }
             }
 
           },
